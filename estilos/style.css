@@ -17,6 +17,8 @@ body
 	border: 0;
 	font: inherit;
     text-overflow: ellipsis;
+    height: 2000px; /* Simula contenido largo para hacer el scroll y cambiar de color de fondo */
+    transition: background-color 0.5s; /* Cambio de color de fondo de blanco a rosa */
 }
 
 /*estilo header*/
@@ -32,7 +34,7 @@ main {
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
-/*estilo imagen main*/
+/*estilo imagen del main*/
 img {
     max-width: 100%;
     max-height: 100%;
@@ -44,6 +46,7 @@ img {
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: transform 0.3s; /* Agrega una transición suave */
 }
 
 /*estilo titulo debajo logo*/
@@ -75,7 +78,161 @@ section {
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;   
 }
 
-/*estilo del footer*/
+/*estilo al botón "si" de la consulta en el Pop-up de contacto */
+#si{
+    background-color: green;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+
+}
+
+/*estilo al botón "no" de la consulta en el Pop-up de contacto */
+#no {
+    background-color: red;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/*Estilo para el botón "Verificar y enviar" del formulario*/
+#enviar {
+    background-color: #4CAF50; /* Color de fondo */
+    color: white; /* Color del texto */
+    padding: 10px 10px; /* Relleno interior */
+    border: none; /* Sin borde */
+    cursor: pointer; /* Cambiar el cursor al pasar el mouse */
+}
+
+/* Estilo para el botón "Borrar Campos" del formulario */
+#limpiar {
+    background-color: #f44336;
+    color: white;
+    padding: 10px 10px;
+    border: none;
+    cursor: pointer;
+}
+
+/* Estilo para el campo de entrada de texto del formulario*/
+input[type="text"] {
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Estilo para el campo de entrada del numero de telefono del formulario*/
+input[type="number"] {
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Estilo para el campo del texto/consulta del formulario*/
+#texto {
+    padding: 10px;
+    margin: 5px 0;  
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Para que aparezca en la misma línea el numero de caracteres de la consulta del form*/
+.contador {
+    display: inline; 
+}
+
+/* Estilo para el campo de entrada del email del formulario*/
+input[type="email"] {
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Cambio del estilo al pasar el mouse sobre el botón "Verificar email y enviar" y "Borrar" */
+#enviar:hover, #limpiar:hover {
+    background-color: black;
+}
+
+/* De aca en adelante: estilos para la sección de los comentarios debajo de la sección del Formulario */
+/*Estilo de la sección comentarios*/
+.seccionComentarios {
+    width: 80%;
+    margin: 0;
+}
+
+/*Estilo del comentario del usuario*/
+.comentario {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin: 20px 0;
+    padding: 15px;
+    background-color: #f9f9f9;
+}
+
+/*Estilo del usuario*/
+.informacionUsuario {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+/*Estilo de la imagen del usuario*/
+.informacionUsuario img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+/*Estilo del parrafo del comentario del usuario*/
+.contenidoComentario p {
+    font-size: 16px;
+}
+
+/* Estilo de los emoticones de los comentarios*/
+.contenidoComentario p {
+    font-size: 18px;
+}
+
+.contenidoComentario p span {
+    font-size: 24px;
+}
+
+/* Estilos para los emoticones de la sección de comentarios */
+.contenidoComentario p:after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+.contenidoComentario p span {
+    margin-right: 5px;
+}
+
+/* Estilo al botón "agregar comentario" de viajeros */
+#botonComentario {
+    padding: 10px 20px;
+    background-color: brown; /* Color de fondo del botón */
+    color: white; /* Color del texto */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 20px;
+}
+
+/* Estilo al botón "agregar comentario" de viajeros */
+#botonComentario:hover {
+    background-color: violet; /* Cambio de color al pasar el mouse sobre el botón */
+}
+
+/*De acá en adelante estilo del footer*/
 footer 
 {
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;  
@@ -85,6 +242,18 @@ footer
     padding: 20px 0;
     margin: 0;
     border: 0;
+    font: inherit;
+    vertical-align: baseline;
+    box-sizing: border-box;
+}
+
+/*estilo del contenido del footer*/
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 0;
+    width: 100%;
     font: inherit;
     vertical-align: baseline;
     box-sizing: border-box;
@@ -111,19 +280,21 @@ footer
     font: inherit;
 }
 
-/*estilo del contenido del footer*/
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-    border: 0;
-    width: 100%;
-    font: inherit;
-    vertical-align: baseline;
-    box-sizing: border-box;
+/*estilo del dato "correo electrónico" en contacto*/
+#correo {
+    transition: transform 0.3s;
+    justify-content: center;
+    margin-left: 50px; /* Se agrega un margen izquierdo para el movimiento a la derecha */
 }
 
-/*estilo del boton en el footer para seguirme en facebook*/
+/*estilo del dato "teléfono" en contacto*/
+#telefono {
+    transition: transform 0.3s;
+    justify-content: center;
+    margin-left: 50px; /* Se agrega un margen izquierdo para el movimiento a la derecha */
+}
+
+/*estilo del botón en el footer "seguime en facebook"*/
 .button {
     text-align: center;
     width: 100px;
@@ -140,22 +311,12 @@ footer
     background-color: greenyellow;
 }
 
-/*estilo del boton en el footer para seguirme en instagram*/
+/*estilo del botón en el footer "seguirme en instagram"*/
 @keyframes myAnimation {
     0% {transform: scale(1);}
     50% { transform: scale(1.5);}
     100% { transform: scale(1)}
     }
-
-.button2 {
-    text-align: center;
-    width: 100px;
-    height: 50%;
-    background-color: greenyellow;
-    animation: myAnimation 2s ease infinite;
-    justify-content: center;
-    align-items: center;
-}
 
 .button3 {
     text-align: center;
@@ -164,6 +325,17 @@ footer
     animation: myAnimation 2s ease infinite;
     justify-content: center;
     align-items: center; 
+}
+
+/*estilo del botón en el footer "seguirme en twitter". El color lo cambio con JS*/
+.button2 {
+    text-align: center;
+    width: 100px;
+    height: 50%;
+    background-color: blueviolet;
+    animation: myAnimation 2s ease infinite;
+    justify-content: center;
+    align-items: center;
 }
 
 /*estilo del slider como mensaje de bienvenida*/
@@ -188,6 +360,7 @@ footer
     text-align: center;
 }
 
+/* A continuación hago responsive mi pagina web para diferentes dispositivos*/
 
 /*Estilos para pantallas Small devices (Galaxy Fold)*/
 @media screen and (min-device-width : 280px) and (max-device-width : 700px) {

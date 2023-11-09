@@ -1,41 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">     
-    <head> <!-- Agrego el head con el link al css y bootstrap -->
+    <head> <!-- Agrego el head con el link al file css y a la página de bootstrap -->
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
         <link rel="stylesheet" href="./estilos/style.css">
     </head>
-    <!-- Agrego en el body el header y las secciones -->
+    <!-- Agrego en el body el header, el main (con las secciones correspondientes) y el footer-->
     <body>
-        <!-- En el header agrego el logo y el titulo principal -->
+        <!-- En el header agrego el logo con una foto y el titulo principal -->
         <header>
             <title>Tiempo de viajar | Blogs de viajes, guías y rutas por libre</title>
             <div class="logo">  
-                <img src="./imagenes/miimagen.PNG" alt="imagenlogo"/>
+                <!-- Al logo le agrego una función con JS para que se cambie la foto al pasar el cursor -->
+                <img id="logo" src="./imagenes/miimagen.PNG" onmouseover="cambiarImagen()" onmouseout="restaurarImagen()" alt="imagenlogo"/>
             </div>
-            <!-- En el nav agrego una nota y el menú principal que te dirije a distintas partes del html -->
+            <!-- En el nav agrego una nota y el menú principal que te dirije a las distintas partes del html -->
             <nav>
-                <p class="editor-note"> <strong>AQUI tienes todo lo necesario para organizar tu viaje por libre</strong></p>  
+                <p class="editor-note"> <strong>AQUI tienes todo lo necesario para organizar tu viaje por libre</strong></p> 
                 <ul class="menu"> 
                     <li>  <a href="#cuando">Cuándo</a></li>
                     <li>  <a href="#alojamiento">Alojamiento</a></li>
-                    <li>  <a href="#consejos"> Consejos</a></li>
-                    <li>  <a href="#itinerario"> Itinerario</a></li>
-                    <li>  <a href="#gastronomia"> Gastronomia</a></li>
-                    <li>  <a href="#atracciones"> Atracciones</a></li> 
+                    <li>  <a href="#consejos">Consejos</a></li>
+                    <li>  <a href="#itinerario">Itinerario</a></li>
+                    <li>  <a href="#gastronomia">Gastronomia</a></li>
+                    <li>  <a href="#atracciones">Atracciones</a></li> 
                 </ul>        
             </nav>
         </header>       
         <main><!-- En el main desarrollo el blog con secciones y articulos -->
-            <div class="slider"> <!-- Adicione antes de comenzar a redactar un mensaje de bienvenida con animación css -->
+            <div class="slider"> <!-- Adicione antes de comenzar a redactar un mensaje de bienvenida con animación en Css -->
                 <p><strong>¡¡¡Espero que disfrutes tu viaje!!!</strong></p>
             </div>
+            <br>
             <section class="cuerpo">
                 <article> <!-- Etiqueta h1 sobre la introducción -->
                     <h1 id="introduccion"> 
-                        <strong>Guia de viaje paso a paso: Roma</strong>
+                        <!--Incorporo un botón para que tocando se agregue un parrafo con JS y cambio de color al pasar el cursor por el-->
+                        <strong><button class="botonHistoria">Guía de viaje paso a paso: Roma</button></strong>
                     </h1>
+                    <!--Incorporo el resultado del boton para agregarle funcionalidad con JS -->
+                    <p class="historia"> Si quieres saber un poco de historia sobre Roma, ¡Apieta aquí arriba!</p> 
                     <div class="card" style="width: 18rem;"> <!--Incorporo primer bootstrap: Card -->
                         <img src="./imagenes/roma1.PNG" alt="roma1" class="card-img-top" alt="">
                         <div class="card-body">
@@ -44,6 +49,10 @@
                     </div>
                     <p class="parrafo">
                     Con esta guía de viaje a Roma queremos ayudarte a preparar tu viaje a la Ciudad Eterna, uno de los destinos más famosos y visitados de Italia y Europa que estamos seguros,te enamorará nada más llegar. Conocida por muchos por ser una de las ciudades con más historia del mundo, Roma es un destino que no defrauda, en el que podrás sorprenderte a cada paso descubriendo monumentos y edificios rebosantes de historia, que se rodean de antiguas iglesias, barrios con encanto y una excelente gastronomía, que te harán aún más, sentir que Roma ha sido un gran acierto. </p>
+                    <!--Incorporo un PopUp de contacto según clase 14 del curso y le doy funcionalidad con JS -->
+                    <p id="popUpContacto"><strong>¿Te gustaría contactarnos por más ayuda?</strong></p>
+                    <button id="si">Sí</button>
+                    <button id="no">No</button>
                 </article>
                 <article> <!-- Etiqueta h2 sobre cuándo conviene viajar -->
                     <h2 id="cuando"> 
@@ -52,7 +61,7 @@
                     <p class="parrafo2">
                     Aunque podríamos decir que cualquier momento es bueno para un viaje a Roma, ya que la ciudad te recibirá con los brazos abiertos durante todo el año, los meses que cubren los periodos de primavera y otoño, son algo más agradables, tanto por temperaturas como por evitar de esta forma las aglomeraciones que suelen haber en los lugares más turísticos los meses de junio, julio y agosto, que además están entre los más calurosos del año.En nuestro tercer viaje a Roma hemos elegido septiembre para disfrutarla y por lo que hemos podido ver, es una de las mejores épocas, tanto por clima como por temporada, ya que te permite disfrutar de la ciudad de una manera relajada, pero también con buen tiempo y con suficientes horas de luz como para poder alargar el día y aprovecharlo al máximo.</p>
                 </article>
-                <article> <!-- Etiqueta h3 sobre cuándo conviene viajar -->
+                <article> <!-- Etiqueta h3 sobre alojamiento en Roma -->
                     <h3 id="alojamiento"> 
                         <strong> Alojamiento en Roma </strong>
                     </h3>
@@ -66,13 +75,13 @@
                     <p class="parrafo4">
                     Aunque cualquier época es buena para una escapada a Roma, teniendo en cuenta las altas temperaturas que suelen acompañar a los meses de junio, julio y agosto, creemos que la mejor sería en primavera y otoño. Durante estas dos estaciones el clima es agradable, hay poca probabilidad de lluvia, los precios del alojamiento son más asequibles y no hay tanta masificación turística como en verano. La peor época para nosotros es el verano, al sufrir temperaturas de hasta 40 grados, interminables colas para entrar en los puntos más turísticos como el Coliseo o los Museos Vaticanos y además, los precios de los hoteles están por las nubes. El invierno también es un buen momento al poder visitar los sitios con menos gente y poder pasear por la ciudad de forma más relajada, a pesar del frío y la mayor probabilidad de lluvia. La mejor forma de moverte por las calles estrechas y peatonales del centro histórico de Roma es andando. Moverte en transporte público por esta zona es más complicado y nosotros únicamente lo aconsejamos utilizar para llegar a los puntos más alejados de la ciudad como las Catacumbas o el Vaticano. En caso de que no te guste mucho andar o tengas problemas de movilidad, tienes que saber que Roma cuenta con metro, autobús y tranvía, que forman un buena red de transporte público cómodo y barato. El metro tiene únicamente tres líneas y es la forma más rápida de llegar a lugares como Villa Borghese, Plaza de España, el Vaticano, el Coliseo y la Fontana di Trevi, bajando en la parada de Barberini. Para llegar a otros puntos de la ciudad y moverte por la noche, la mejor opción es el autobús con más de 350 líneas y el tranvía con seis líneas. El precio de un billete en todos estos medios de transportes públicos es de 1,50 euros el trayecto, mientras que el abono diario cuesta 6 euros. También puedes comprar el abono turístico de 3 días que tiene un precio de 16,50 euros o el de una semana que sale por 24 euros. Recuerda que puedes comprar el billete en la mayoría de estancos y kioscos de la ciudad. En caso de que hayas comprado la OMNIA Vatican & Rome Card tendrás incluido el transporte en la ciudad. Los ciudadanos de la Unión Europea solo necesitan llevar el DNI o el Pasaporte para viajar a Roma, sin necesidad de ningún tipo de visado. Si tu país no pertenece a la UE, te aconsejamos llamar o consultar la página de la Embajada Italiana de tu país o en el Ministerio de Exteriores para conocer los documentos obligatorios. Otro de los requisitos que no son obligatorios, pero sí muy recomendables, es traer la Tarjeta Sanitaria Europea, con la que serán mucho más fáciles los trámites y el reembolso, en caso de un percance médico, en cualquier hospital público italiano.Si no dispones de esta tarjeta o quieres tener más coberturas, como por ejemplo una repatriación, es muy aconsejable contratar mejor seguro de viaje a Europa posible.</p>
                 </article>
-                <article> <!-- Etiqueta h4 sobre el itinerario a realizar -->
+                <article> <!-- Etiqueta h4 sobre un ejemplo de itinerario a realizar -->
                     <h4 id="itinerario">
                         <strong> Lugares imprescindibles para visitar en Roma</strong>
                     </h4>
                     <p class="parrafo5">
                     Esta lista de los mejores lugares que visitar en Roma te ayudará a no perderte nada importante de una de las ciudades más increíbles del mundo, aprovechando al máximo el tiempo. Conocida como la Ciudad Eterna, Roma podemos decir que es un museo al aire libre gracias a sus impresionantes monumentos de más de 2000 años, fuentes barrocas de increíble belleza, cientos de antiguas iglesias además de barrios llenos de encanto y museos con colecciones únicas sin olvidar numerosos restaurantes tradicionales en los que podrás probar una de las mejores gastronomías del mundo. Es importante saber que para conocer todas estas maravillas te recomendamos invertir un mínimo de 3 o 4 días aunque si quieres conocer cada rincón de esta enorme ciudad lo mejor es disponer de una semana entera. ¡Te aseguramos que no te sobrará ni un momento!. Aunque siempre es un buen momento para visitar a Roma, nuestra experiencia nos lleva a recomendarte que evites, siempre que sea posible, los meses de verano cuando el calor extremo y las largas colas en los principales atractivos turísticos, no te dejarán disfrutar de la ciudad tanto como se merece. </p>
-                    <ul> <!-- Generación de lista ul -->
+                    <ul> <!-- Generación de lista ul para mostrar los lugares turísticos de Roma con viñetas -->
                         <li>El Coliseo</li>
                         <li>Arco de Constantino</li>
                         <li>El Palatino</li>
@@ -123,14 +132,15 @@
                     <span class="visually-hidden">Next</span>
                     </button>
                 </div>
+                <div id="infoDestinos"></div>
                 </article>
-                <article> <!-- Etiqueta h4 sobre gastronomia -->
+                <article> <!-- Etiqueta h4 sobre gastronomia en Roma-->
                     <h4 id="gastronomia">
                         <strong>Gastronomía en Roma</strong>
                     </h4>
                     <p class="parrafo6">
                     ¿Estás buscando un restaurante en Roma? ¿Vas a viajar a la ciudad y también quieres disfrutar de la mejor gastronomía? ¡Estás en el lugar adecuado! En este artículo vamos a compartir contigo una selección de locales en los que podrás disfrutar de una de las mejores gastronomías del mundo que estamos seguros, no te dejará indiferente. ¡Prepárate para degustar las mejores pastas y pizzas! Y aunque sabemos que en este listado no van a estar todos los restaurantes que deberían estar, y más en un lugar como Roma que se come de fábula, sí que después de nuestras múltiples visitas a la ciudad, queremos compartir contigo nuestro pequeño listado de restaurantes preferidos a los que siempre volvemos y que pueden presumir de tener una estupenda relación calidad-precio. Basándonos en nuestra experiencia, después de las varias veces que hemos visitado la ciudad, una de ellas alojándonos durante dos meses en el Trastevere para hacer esta guía de Roma, te dejamos este listado de restaurantes donde comer en Roma que estamos seguros, pasarán a formar parte de tus restaurantes favoritos no solo de la ciudad, sino del país. ¡Empezamos!</p>
-                    <ul> <!-- Generación de lista ul -->
+                    <ul> <!-- Generación de lista ul para hacer una lista de los restaurantes-->
                         <li>Da Enzo al 29</li>
                         <li>Rione XIV</li>
                         <li>Osteria Da Fortunata</li>
@@ -138,63 +148,113 @@
                         <li>Pane e Salame</li>
                     </ul>
                 </article>
-                <article> <!-- Etiqueta h4 sobre atracciones del viaje -->
+                <article> <!-- Etiqueta h4 sobre las atracciones del viaje -->
                     <h4 id="atracciones">
                         <strong>Cómo visitar el Coliseo Romano</strong>
                     </h4>
                     <p class="parrafo7">
                     Lo primero y más importante antes de comprar las entradas para el Coliseo de Roma es tener claros algunos detalles e información sobre la visita: El Coliseo Romano se puede visitar por libre o con visita guiada si quieres conocer su historia, algo que te recomendamos muchísimo. La entrada al Coliseo de Roma incluye la entrada gratuita al Foro Romano y al Monte Palatino. Si compras la entrada ordinaria tendrás 48 horas para visitar los tres lugares que incluyen las entradas: Coliseo, Foro Romano y Palatino. En caso de que compres alguna de las entradas especiales, que incluyen la visita a la arena o al subterráneo, también tendrás 48 horas para visitar los tres lugares. Eso sí, recuerda que únicamente puedes acceder una vez en el Coliseo y una vez en el Foro Romano y Palatino. La entrada general tiene un precio de 16 euros por persona y se puede comprar en las taquillas del Coliseo, el Foro romano u online en la página oficial con un incremento de 2 euros por gestión.Si no quieres hacer largas colas y asegurarte una plaza, algo muy importante ya que las entradas se agotan rápidamente, puedes reservar estas entradas con antelación. Durante los fines de semana y especialmente en temporada alta, las colas en el Coliseo pueden ser bastante largas e incluso en muchas ocasiones el tiempo de espera se puede acercar a las 3 horas. En este caso, es muy recomendable comprar la entrada combinada en la taquilla del Foro Romano, donde suele haber mucha menos gente, y así evitar las largas colas que suelen haber en el Coliseo de Roma. En caso de que quieras saltarte las colas y hacer una visita guiada, te recomendamos reservar esta visita guiada por el Coliseo, Foro y Palatino, esta entrada al Coliseo, Foro y Palatino + Arena de gladiadores o esta que incluye todo, todas ellas con guía en español que además están clasificadas como las mejores por los viajeros. Otra buena opción es coger esta oferta que incluye el Vaticano, Coliseo, Foro y Palatino.</p>
                 </article>
-            </section> <!-- Creación del form para enviar los datos del usuario -->
+            </section> 
+            <!-- Creación del formulario para que el usuario envie sus dudas/consultas -->
             <section class="formulario">
-                    <h5> <!-- Creación de la etiqueta h5 sobre el titulo del formulario -->
-                        <strong>Formulario de consultas y dudas sobre viajes</strong>
-                    </h5>
-                    <form action="" method=""> <!-- Creación del formulario -->
-                        <label for="nombre"> Nombre</label>
-                        <input type="text" name="nombre" id="nombre">
-                        <br>
-                        <label for="apellido"> Apellido</label>
-                        <input type="text" name="apellido" id="apellido">
-                        <br>
-                        <label for="area">Consulta</label>
-                        <textarea name="area" id="area" cols="30" rows="10"></textarea>
-                        <br>
-                        <label for="telefono"> Celular</label>
-                        <input type="number" name="celular" id="celular">
-                        <br>
-                        <label for="email"> Correo Electrónico</label>
-                        <input type="email" name="email" id="email">
-                        <br>
-                        <input type="submit">
-                        <input type="reset" value="Borrar Campos">
-                    </form>
+                <!-- Creación de la etiqueta h5 sobre el titulo del formulario -->
+                <h5> 
+                    <strong>Formulario de consultas y dudas sobre viajes</strong>
+                </h5>
+                <!-- Creación del formulario -->
+                <form id="formulario" method=""> 
+                    <label for="nombre"> Nombre*</label>
+                    <input type="text" name="nombre" id="nombre">
+                    <br>
+                    <label for="apellido"> Apellido*</label>
+                    <input type="text" name="apellido" id="apellido">
+                    <br>
+                    <label for="texto">Consulta*</label>
+                    <textarea name="texto" id="texto" oninput="contarCaracteres(this)" cols="30" rows="10"></textarea>
+                    <br>
+                    <br> <!-- Agrego otro espacio porque me quedaba muy junto -->
+                    <!-- El texto "caracteres ingresados:" se establece como parte del texto fijo y le adiciono un contador con funcionalidad en JS  -->
+                    <p> 
+                        <span id="contador-caracteres" class="contador"> Caracteres ingresados: 0 </span>
+                    </p>
+                    <label for="telefono"> Celular</label>
+                    <input type="number" name="celular" id="celular">
+                    <br>
+                    <label for="email"> Correo Electrónico*</label>
+                    <input type="email" name="email" id="email" required>
+                    <br>
+                    <button type="submit" id="enviar"> Verificar email y enviar</button>
+                    <input type="reset" id="limpiar" value="Borrar Campos">
+                </form>
+                <p id="result"></p>
+            </section>
+            <!-- Creación de la sección donde dejo fijo algunos comentarios de experiencias de los viajeros y agrego funcionalidad al botón "Agregar Comentario" para que agregue mensajes ya fijos-->
+            <section class="seccionComentarios">
+                <div class="comentario">
+                    <h6><strong>Comentarios y experiencias</strong></h6>
+                    <!-- Primer comentario fijo-->
+                    <div class="comentario">
+                        <!-- Información del viajero del primer comentario -->
+                        <div class="informacionUsuario">
+                            <img src="imagenes\avatarhombre.PNG" alt="hombre">
+                            <h4>Agustín Avellaneda</h4>
+                        </div>
+                        <!-- Contenido del primer comentario -->
+                        <div class="contenidoComentario">
+                            <!-- Texto del primer comentario con emoticones -->
+                            <p>¡Roma es increíble! Disfruté cada momento en esta hermosa ciudad. El Coliseo es impresionante. 😍🏛️</p>
+                        </div>
+                    </div>
+                    <!-- Segundo comentario fijo-->
+                    <div class="comentario">
+                        <!-- Información del viajero del segundo comentario -->
+                        <div class="informacionUsuario">
+                            <img src="imagenes\avatarmujer.PNG" alt="mujer">
+                            <h4>Roxana Gonzalez</h4>
+                        </div>
+                        <!-- Contenido del segundo comentario -->
+                        <div class="contenidoComentario">
+                            <!-- Texto del segundo comentario con emoticones -->
+                            <p>¡Visitar el Vaticano fue una experiencia única! La Capilla Sixtina es asombrosa. 🎨🙏</p>
+                        </div>
+                    </div>
+                </div>
+                <button id="botonComentario">Agregar Comentario</button>
             </section>
         </main>
-        <footer> <!-- Creación del footer con retroalimentación sobre que te parece la página + reacciones -->
+        <!-- Creación del footer con retroalimentación sobre que te parece la página + reacciones, datos de contacto y propiedad intelectual -->
+        <footer> 
             <div id="reactions">
                 <h5> Ayudanos a mejorar. ¿Qué te parecio la información?</h5>
                 <a href="#" class="reaction" data-reaction="👍">👍</a>
                 <a href="#" class="reaction" data-reaction="❤️">❤️</a>
                 <a href="#" class="reaction" data-reaction="😄">😄</a>
+                <a href="#" class="reaction" data-reaction="🤮">🤮</a>
             </div>
             <div class="container">
                 <div class="footer-content">
-                <div class="footer-logo"> <!-- div con el logo principal de la pagina -->
+                <!-- div con el logo principal de la pagina -->
+                <div class="footer-logo"> 
                     <img src="./imagenes/miimagen.PNG" alt="imagenlogo">
-                </div> <!-- div con información de contacto final -->
-                <div class="footer-contact">
-                    <p>Contacto: info@tudominio.com</p>
-                    <p>Teléfono: 4443-0000</p> 
+                </div> 
+                <!-- div con información de contacto final -->
+                <div class="footer-contact"><br>
+                    <p id="correo">Correo electrónico: info@tudominio.com</p>
+                    <p id="telefono">Teléfono: 4443-0000</p> 
                 </div>
                 </div>
             </div>
-            <div class="button"> <p>Seguime en facebook</p></div> <br> <!-- Adicione un botón que cambia de color con animación css haciendo alusión a facebook--> 
-            <div class="button2"> <p> Seguime en Twitter </p></div> <br><!-- Adicione otro boton que cambia de tamaño con animación css haciendo alusión a twitter-->
-            <div class="button3"> <!-- Adicione un boton con foto de instagram que cambia de tamaño y animación css-->
+            <!-- Adicione un botón que cambia de color con animación css haciendo alusión a facebook--> 
+            <div class="button"> <p>Seguime en facebook</p></div> <br> 
+            <!-- Adicione otro botón que cambia de tamaño y color al pasar el cursor por el con JS-->
+            <div class="button2"> <p> Seguime en Twitter </p></div> <br>
+            <!-- Adicione un botón con foto de instagram que cambia de tamaño y con animación css-->
+            <div class="button3"> 
                 <p><img src="./imagenes/logoinstagram.PNG" alt=""></p><br>
             </div>
-            <div class="container"> <!-- Incorporé mobile-first flexbox con tres columnas-->
+            <!-- Con este div incorporé mobile-first flexbox con tres columnas-->
+            <div class="container"> 
                 <div class="row">
                 <div class="col-sm">
                     Información legal
@@ -208,6 +268,8 @@
                 </div>
             </div>
         </footer> 
-            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script> <!-- Incorporé el script del bootstrap-->
+            <!-- Agrego los Scripts de JavaScript y Bootstrap -->
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script> 
+            <script src="code.js"></script> 
     </body>   
 </html>
